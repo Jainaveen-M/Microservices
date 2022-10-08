@@ -15,7 +15,7 @@ def hello():
 @app.route('/demo',methods=['GET'])
 def demo():
     try:
-        result = requests.get('http://172.19.0.3:5055/')
+        result = requests.get('http://mdlogin:5055/')
         return jsonify({"data":str(result.content)})
     except Exception as e:
         print(str(e))
@@ -65,7 +65,7 @@ class TEST(Base):
     
     
 if __name__ == "__main__":
-    db_str = "mysql+pymysql://root:root@172.19.0.4:3306/demo"
+    db_str = "mysql+pymysql://root:root@mysql:3306/demo"
     init_db(db_str=db_str)
     app.run(host="0.0.0.0",port="5056",debug=True)
 

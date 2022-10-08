@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  login:
+    image: login_serive
+    networks:
+      - micro_network
+    ports:
+      - 5056:5056
+  mdlogin:
+    image: md_login_serive
+    networks:
+      - micro_network
+    ports:
+      - 5055:5055
+  mysql:
+    image: mysql
+    networks:
+      - micro_network
+    ports:
+      - 3068:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: demo
+networks:
+  micro_network:
+    name: micro_network
