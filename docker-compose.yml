@@ -6,6 +6,12 @@ services:
       - micro_network
     ports:
       - 5056:5056
+  registration:
+    image: registration_serive
+    networks:
+      - micro_network
+    ports:
+      - 5057:5057
   mdlogin:
     image: md_login_serive
     networks:
