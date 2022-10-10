@@ -3,6 +3,6 @@ WORKDIR /app
 COPY ./requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 COPY . /app
-EXPOSE 5057
+EXPOSE 5056
 ENTRYPOINT [ "python" ]
-CMD [ "registration_service.py" ]
+CMD [ "login_service.py" ]
